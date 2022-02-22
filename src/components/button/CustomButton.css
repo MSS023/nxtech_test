@@ -1,0 +1,22 @@
+.CustomButton {
+    background: #002060;
+    border-radius: 5px;
+    height: 45px;
+    justify-content: center;
+    display: flex;
+}
+
+.buttn {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: white;
+}
+
+.buttn:hover {
+    border: none;
+}
+
+.buttn:focus {
+    border: none;
+}

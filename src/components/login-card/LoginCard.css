@@ -1,0 +1,27 @@
+.LoginCard {
+    padding: 20px;
+    background: white;
+    align-items: center;
+    justify-self: center;
+}
+
+.mainHeading {
+    font-size: 24px;
+    color: #001f60;
+}
+
+.Mobile {
+    padding-top: 13.5px;
+}
+
+.SignInFooter {
+    color: #9f9f9f;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 6%;
+    margin: 13px 0;
+}
+
+.SignInFooter>a {
+    color: #3800ff;
+}
