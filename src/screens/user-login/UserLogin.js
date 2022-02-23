@@ -119,7 +119,7 @@ function UserLogin(props) {
             placeholder="City"
             validation={validateCity}
             onChange={setCity}
-            errorText={"Please Enter Your City"}
+            errorText={"Please Enter Your State"}
           />
           <CustomButton onClick={handleRequest}>Request to Register</CustomButton>
           <p className="SignInFooter">
