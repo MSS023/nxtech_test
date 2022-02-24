@@ -1,0 +1,47 @@
+.ListItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: white;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+.individualContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.individual {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.buttonsIndividual {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttonindi {
+    width: 80px;
+}
+
+.individual > p {
+    margin: 0px 0;
+}
+
+@media screen and (max-width: 500px) {
+    .buttonsIndividual {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .individual{
+        align-items: start;
+        text-align: left;
+    }
+}

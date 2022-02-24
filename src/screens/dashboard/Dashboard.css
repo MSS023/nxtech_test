@@ -1,0 +1,73 @@
+.Dashboard {
+    padding-bottom: 30px;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 100px;
+    justify-content: center;
+}
+
+.column {
+    width: 40%;
+}
+
+.charts {
+    width: 100%;
+    overflow-x: scroll;
+    margin: 30px 0;
+}
+
+.charts::-webkit-scrollbar {
+    display: none;
+}
+
+.listHeading {
+    font-size: 2rem;
+    color: #002060;
+}
+
+.item {
+    margin: 15px 0;
+}
+
+.pageNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.pageNav > p {
+    margin: 0;
+}
+
+.pageNav > button {
+    border: none;
+    color: #002060;
+}
+
+@media screen and (max-width: 970px) {
+    .list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .column {
+        width: 90%;
+        margin: auto;
+    }
+
+    .item {
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .charts{
+        display: none;
+    }
+}

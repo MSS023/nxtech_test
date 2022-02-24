@@ -1,126 +1,285 @@
 {
-  "users": [],
-  "registrations": [
+  "users": [
     {
-      "mobile": "8800204563",
+      "name": "someone",
+      "mobile": "1234567890",
       "password": "qwertyui",
-      "name": "Admin ",
-      "city": "Delhi",
+      "state": "Maharashtra",
       "id": 1
     }
   ],
-  "admins": [
+  "registrations": [
+    {
+      "status": "approved",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "someone",
+      "state": "Maharashtra",
+      "id": 1
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "some",
+      "state": "Maharashtra",
+      "id": 2
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "som",
+      "state": "Delhi",
+      "id": 3
+    },
+    {
+      "status": "pending",
+      "mobile": "8800204563",
+      "password": "qwertyui",
+      "name": "ksfskfk",
+      "state": "Delhi",
+      "id": 4
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "somq",
+      "state": "Delhi",
+      "id": 5
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "somds",
+      "state": "Delhi",
+      "id": 6
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "som78",
+      "state": "Delhi",
+      "id": 7
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "somq3",
+      "state": "Delhi",
+      "id": 8
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "somq9879",
+      "state": "Maharashtra",
+      "id": 9
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "somq93",
+      "state": "Maharashtra",
+      "id": 10
+    },
+    {
+      "status": "pending",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "somqehsi93",
+      "state": "Maharashtra",
+      "id": 11
+    }
+  ],
+  "administrators": [
     {
       "id": 1,
-      "adminId": "admin@admin.com",
+      "adminId": "admin",
       "password": "Admin@123"
     }
   ],
   "states": [
     {
-      "state": "Andhra Pradesh"
+      "id": 1,
+      "state": "Andhra Pradesh",
+      "num": 0
     },
     {
-      "state": "Arunachal Pradesh"
+      "id": 2,
+      "state": "Arunachal Pradesh",
+      "num": 0
     },
     {
-      "state": "Assam"
+      "id": 3,
+      "state": "Assam",
+      "num": 0
     },
     {
-      "state": "Bihar"
+      "id": 4,
+      "state": "Bihar",
+      "num": 0
     },
     {
-      "state": "Chandigarh"
+      "id": 5,
+      "state": "Chandigarh",
+      "num": 0
     },
     {
-      "state": "Chhattisgarh"
+      "id": 6,
+      "state": "Chhattisgarh",
+      "num": 0
     },
     {
-      "state": "Dadra and Nagar Haveli"
+      "id": 7,
+      "state": "Dadra and Nagar Haveli",
+      "num": 0
     },
     {
-      "state": "Daman and Diu"
+      "id": 8,
+      "state": "Daman and Diu",
+      "num": 0
     },
     {
-      "state": "Delhi"
+      "id": 9,
+      "state": "Delhi",
+      "num": null
     },
     {
-      "state": "Goa"
+      "id": 10,
+      "state": "Goa",
+      "num": 0
     },
     {
-      "state": "Gujarat"
+      "id": 11,
+      "state": "Gujarat",
+      "num": 0
     },
     {
-      "state": "Haryana"
+      "id": 12,
+      "state": "Haryana",
+      "num": 0
     },
     {
-      "state": "Himachal Pradesh"
+      "id": 13,
+      "state": "Himachal Pradesh",
+      "num": 0
     },
     {
-      "state": "Jammu and Kashmir"
+      "id": 14,
+      "state": "Jammu and Kashmir",
+      "num": 0
     },
     {
-      "state": "Jharkhand"
+      "id": 15,
+      "state": "Jharkhand",
+      "num": 0
     },
     {
-      "state": "Karnataka"
+      "id": 16,
+      "state": "Karnataka",
+      "num": 0
     },
     {
-      "state": "Kerala"
+      "id": 17,
+      "state": "Kerala",
+      "num": 0
     },
     {
-      "state": "Lakshadweep"
+      "id": 18,
+      "state": "Lakshadweep",
+      "num": 0
     },
     {
-      "state": "Madhya Pradesh"
+      "id": 19,
+      "state": "Madhya Pradesh",
+      "num": 0
     },
     {
-      "state": "Maharashtra"
+      "id": 20,
+      "state": "Maharashtra",
+      "num": 1
     },
     {
-      "state": "Manipur"
+      "id": 21,
+      "state": "Manipur",
+      "num": 0
     },
     {
-      "state": "Meghalaya"
+      "id": 22,
+      "state": "Meghalaya",
+      "num": 0
     },
     {
-      "state": "Mizoram"
+      "id": 23,
+      "state": "Mizoram",
+      "num": 0
     },
     {
-      "state": "Nagaland"
+      "id": 24,
+      "state": "Nagaland",
+      "num": 0
     },
     {
-      "state": "Odisha"
+      "id": 25,
+      "state": "Odisha",
+      "num": 0
     },
     {
-      "state": "Puducherry"
+      "id": 26,
+      "state": "Puducherry",
+      "num": 0
     },
     {
-      "state": "Punjab"
+      "id": 27,
+      "state": "Punjab",
+      "num": 0
     },
     {
-      "state": "Rajasthan"
+      "id": 28,
+      "state": "Rajasthan",
+      "num": 0
     },
     {
-      "state": "Sikkim"
+      "id": 29,
+      "state": "Sikkim",
+      "num": 0
     },
     {
-      "state": "Tamil Nadu"
+      "id": 30,
+      "state": "Tamil Nadu",
+      "num": 0
     },
     {
-      "state": "Telangana"
+      "id": 31,
+      "state": "Telangana",
+      "num": 0
     },
     {
-      "state": "Tripura"
+      "id": 32,
+      "state": "Tripura",
+      "num": 0
     },
     {
-      "state": "Uttarakhand"
+      "id": 33,
+      "state": "Uttarakhand",
+      "num": 0
     },
     {
-      "state": "Uttar Pradesh"
+      "id": 34,
+      "state": "Uttar Pradesh",
+      "num": 0
     },
     {
-      "state": "West Bengal"
+      "id": 35,
+      "state": "West Bengal",
+      "num": 0
     }
   ]
 }

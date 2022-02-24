@@ -1,0 +1,12 @@
+.navButton {
+    width: 75px;
+    height: 40px;
+    border: none;
+    background: white;
+    color: #002068;
+    margin: 0 10px;
+}
+
+.navbar {
+    flex-wrap: nowrap;
+}

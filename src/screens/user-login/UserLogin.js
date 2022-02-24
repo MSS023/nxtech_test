@@ -65,7 +65,7 @@ function UserLogin(props) {
   return (
     <div className="UserLogin">
       <section className="Top">
-        <Navbar />
+        <Navbar buttons={[]} />
       </section>
       <section className={"Bottom " + (!next ? "" : "hidden")}>
         <div className="LoginCard">

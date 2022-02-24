@@ -6,13 +6,11 @@ import { useState } from "react";
 import { adminLogin } from "../../services/services";
 import { useDispatch } from "react-redux";
 import { setAdmin } from "../../store/actions/admin-actions";
-import { useNavigate } from "react-router-dom";
 
 function AdminLogin(props) {
   const [adminID, setAdminID] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const navigate=useNavigate();
   function validateAdmnID(value) {
     if (value.length === 0) return false;
     return true;
@@ -27,14 +25,17 @@ function AdminLogin(props) {
       if(login) {
         dispatch(setAdmin(adminID,password));
       }
+      else {
+        alert("You have entered username/password combination")
+      }
     }
   }
   return (
     <div className="AdminLogin">
       <section className="Top">
-        <Navbar />
+        <Navbar buttons={[]} />
       </section>
-      <section className="Bottom">
+      <section className="AdminBottom">
         <div className="LoginCard">
           <header>
             <h1 className="mainHeading">Admin Sign In</h1>

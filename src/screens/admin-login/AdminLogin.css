@@ -4,8 +4,8 @@
     flex-direction: column;
 }
 
-.Bottom {
-    width: 32.7%;
+.AdminBottom {
+    width: 400px;
     padding: 5px;
     margin: auto 0;
     align-self: center;
@@ -17,6 +17,7 @@
     background: white;
     align-items: center;
     justify-self: center;
+    width: 100%;
 }
 
 .mainHeading {
@@ -42,4 +43,13 @@
 
 .hidden {
     display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .AdminBottom {
+        width: 100%;
+        margin: auto;
+        padding: 5%;
+        display: flex;
+    }
 }
