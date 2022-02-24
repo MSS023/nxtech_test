@@ -4,9 +4,16 @@
     border: none;
     background: white;
     color: #002068;
-    margin: 0 10px;
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
 }
 
 .navbar {
     flex-wrap: nowrap;
+}
+
+.NavbarButtonContainer {
+    display: flex;
+    flex-direction: row;
 }

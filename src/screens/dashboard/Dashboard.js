@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   Bar,
   BarChart,
@@ -30,7 +31,8 @@ function Dashboard(props) {
   const [pageReg, setPageReg] = useState(1);
   const [pageUser, setPageUser] = useState(1);
   const dispatch = useDispatch();
-  const initialize = useCallback( async () => {
+  const navigate = useNavigate();
+  const initialize = useCallback(async () => {
     const responseRegistrations = await getActiveRegistrations(pageReg);
     setRegistrations(responseRegistrations.data);
     const responseUsers = await getActiveUsers(pageUser);
@@ -41,10 +43,10 @@ function Dashboard(props) {
       data.push({ name: val.state, activeUsers: val.num });
     });
     setChart(data);
-  },[setRegistrations,pageReg,pageUser])
+  }, [setRegistrations, pageReg, pageUser]);
   useEffect(() => {
     initialize();
-  }, [pageReg,pageUser,initialize]);
+  }, [pageReg, pageUser, initialize]);
   async function onApprove(id) {
     await approveRequest(id);
     await initialize();
@@ -73,13 +75,22 @@ function Dashboard(props) {
   }
 
   function logOut() {
-      dispatch(setAdmin(null,null));
+    dispatch(setAdmin(null, null));
+  }
+
+  function user() {
+    navigate("/");
   }
 
   return (
     <div className="Dashboard">
       <section className="Top">
-        <Navbar buttons={[{title: "Sign Out", onClick: logOut}]} />
+        <Navbar
+          buttons={[
+            { title: "User", onClick: user },
+            { title: "Sign Out", onClick: logOut },
+          ]}
+        />
       </section>
       <section className="BottomDashboard">
         <div className="charts">
@@ -119,15 +130,27 @@ function Dashboard(props) {
                 />
               );
             })}
-            <div className="pageNav">
-              <button onClick={() => {
-                  prev("reg");
-              }}>Prev</button>
-              <p>{pageReg}</p>
-              <button onClick={() => {
-                  next("reg")
-              }}>Next</button>
-            </div>
+            {registrations.length === 0 ? (
+              "No Pending Registrations"
+            ) : (
+              <div className="pageNav">
+                <button
+                  onClick={() => {
+                    prev("reg");
+                  }}
+                >
+                  Prev
+                </button>
+                <p>{pageReg}</p>
+                <button
+                  onClick={() => {
+                    next("reg");
+                  }}
+                >
+                  Next
+                </button>
+              </div>
+            )}
           </div>
           <div className="active-users column">
             <h1 className="listHeading">Active Users</h1>
@@ -144,15 +167,27 @@ function Dashboard(props) {
                 />
               );
             })}
-            <div className="pageNav">
-              <button onClick={() => {
-                  prev("user");
-              }}>Prev</button>
-              <p>{pageUser}</p>
-              <button onClick={() => {
-                  next("user");
-              }}>Next</button>
-            </div>
+            {activeUsers.length === 0 ? (
+              "No Active Users"
+            ) : (
+              <div className="pageNav">
+                <button
+                  onClick={() => {
+                    prev("user");
+                  }}
+                >
+                  Prev
+                </button>
+                <p>{pageUser}</p>
+                <button
+                  onClick={() => {
+                    next("user");
+                  }}
+                >
+                  Next
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </section>
