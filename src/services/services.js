@@ -88,7 +88,7 @@ export async function sendRemoveUser(id) {
   if(!state)
     return false;
   const patch = await axios.patch(baseUrl+"/states/"+state.data[0].id,{
-    num: state.data.num-1
+    num: state.data[0].num-1
   })
   console.log(patch);
   return true;

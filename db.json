@@ -1,103 +1,6 @@
 {
-  "users": [
-    {
-      "name": "someone",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "state": "Maharashtra",
-      "id": 1
-    }
-  ],
-  "registrations": [
-    {
-      "status": "approved",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "someone",
-      "state": "Maharashtra",
-      "id": 1
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "some",
-      "state": "Maharashtra",
-      "id": 2
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "som",
-      "state": "Delhi",
-      "id": 3
-    },
-    {
-      "status": "pending",
-      "mobile": "8800204563",
-      "password": "qwertyui",
-      "name": "ksfskfk",
-      "state": "Delhi",
-      "id": 4
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "somq",
-      "state": "Delhi",
-      "id": 5
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "somds",
-      "state": "Delhi",
-      "id": 6
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "som78",
-      "state": "Delhi",
-      "id": 7
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "somq3",
-      "state": "Delhi",
-      "id": 8
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "somq9879",
-      "state": "Maharashtra",
-      "id": 9
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "somq93",
-      "state": "Maharashtra",
-      "id": 10
-    },
-    {
-      "status": "pending",
-      "mobile": "1234567890",
-      "password": "qwertyui",
-      "name": "somqehsi93",
-      "state": "Maharashtra",
-      "id": 11
-    }
-  ],
+  "users": [],
+  "registrations": [],
   "administrators": [
     {
       "id": 1,
@@ -149,7 +52,7 @@
     {
       "id": 9,
       "state": "Delhi",
-      "num": null
+      "num": 0
     },
     {
       "id": 10,
@@ -204,7 +107,7 @@
     {
       "id": 20,
       "state": "Maharashtra",
-      "num": 1
+      "num": 0
     },
     {
       "id": 21,
