@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   Bar,
@@ -30,21 +30,21 @@ function Dashboard(props) {
   const [pageReg, setPageReg] = useState(1);
   const [pageUser, setPageUser] = useState(1);
   const dispatch = useDispatch();
-  async function initialize() {
+  const initialize = useCallback( async () => {
     const responseRegistrations = await getActiveRegistrations(pageReg);
     setRegistrations(responseRegistrations.data);
     const responseUsers = await getActiveUsers(pageUser);
     setActiveUsers(responseUsers.data);
     const allUsers = await getStates();
     let data = [];
-    allUsers.forEach((val, index) => {
+    allUsers.forEach((val) => {
       data.push({ name: val.state, activeUsers: val.num });
     });
     setChart(data);
-  }
+  },[setRegistrations,pageReg,pageUser])
   useEffect(() => {
     initialize();
-  }, [pageReg,pageUser]);
+  }, [pageReg,pageUser,initialize]);
   async function onApprove(id) {
     await approveRequest(id);
     await initialize();

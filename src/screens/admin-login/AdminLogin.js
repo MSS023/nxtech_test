@@ -6,11 +6,13 @@ import { useState } from "react";
 import { adminLogin } from "../../services/services";
 import { useDispatch } from "react-redux";
 import { setAdmin } from "../../store/actions/admin-actions";
+import { useNavigate } from "react-router-dom";
 
 function AdminLogin(props) {
   const [adminID, setAdminID] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   function validateAdmnID(value) {
     if (value.length === 0) return false;
     return true;
@@ -30,10 +32,13 @@ function AdminLogin(props) {
       }
     }
   }
+  function user() {
+    navigate("/");
+  }
   return (
     <div className="AdminLogin">
       <section className="Top">
-        <Navbar buttons={[]} />
+        <Navbar buttons={[{title: "User", onClick: user}]} />
       </section>
       <section className="AdminBottom">
         <div className="LoginCard">

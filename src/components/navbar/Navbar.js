@@ -6,7 +6,7 @@ function Navbar(props) {
     <div className="Navbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             Login Portal
           </a>
         </div>

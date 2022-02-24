@@ -1,6 +1,15 @@
 {
   "users": [],
-  "registrations": [],
+  "registrations": [
+    {
+      "status": "approved",
+      "mobile": "1234567890",
+      "password": "qwertyui",
+      "name": "Someone",
+      "state": "Delhi",
+      "id": 1
+    }
+  ],
   "administrators": [
     {
       "id": 1,

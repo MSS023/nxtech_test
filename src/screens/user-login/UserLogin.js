@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar/Navbar";
 import "./UserLogin.css";
 import { useState } from "react";
 import { sendRequestRegistration } from "../../services/services";
+import { useNavigate } from "react-router-dom";
 
 function UserLogin(props) {
   const [mobile, setMobile] = useState("");
@@ -12,6 +13,7 @@ function UserLogin(props) {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   const [next, setNext] = useState(false);
+  const navigate = useNavigate();
   function validateNumber(value) {
     if (value.length !== 10) return false;
     return true;
@@ -62,10 +64,14 @@ function UserLogin(props) {
     }
   }
 
+  function admin() {
+    navigate("admin");
+  }
+
   return (
     <div className="UserLogin">
       <section className="Top">
-        <Navbar buttons={[]} />
+        <Navbar buttons={[{title: "Admin", onClick: admin}]} />
       </section>
       <section className={"Bottom " + (!next ? "" : "hidden")}>
         <div className="LoginCard">
@@ -123,8 +129,8 @@ function UserLogin(props) {
           />
           <CustomButton onClick={handleRequest}>Request to Register</CustomButton>
           <p className="SignInFooter">
-            By Registration, I agree to the <a href="#">Terms of Service</a> and{" "}
-            <a href="#">Privacy Policy</a>
+            By Registration, I agree to the <a href="/">Terms of Service</a> and{" "}
+            <a href="/">Privacy Policy</a>
           </p>
         </div>
       </section>
