@@ -1,18 +1,19 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  LabelList,
-  Legend,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+// import {
+//   Bar,
+//   BarChart,
+//   CartesianGrid,
+//   LabelList,
+//   Legend,
+//   Tooltip,
+//   XAxis,
+//   YAxis,
+// } from "recharts";
 import ListItem from "../../components/list-item/ListItem";
 import Navbar from "../../components/navbar/Navbar";
+import Chartjs from "chart.js/auto";
 import {
   approveRequest,
   getActiveRegistrations,
@@ -23,27 +24,39 @@ import {
 } from "../../services/services";
 import { setAdmin } from "../../store/actions/admin-actions";
 import "./Dashboard.css";
+import { chartConfig } from "../../components/chart/chart-config";
 
 function Dashboard(props) {
   const [registrations, setRegistrations] = useState([]);
   const [activeUsers, setActiveUsers] = useState([]);
-  const [chart, setChart] = useState([]);
   const [pageReg, setPageReg] = useState(1);
   const [pageUser, setPageUser] = useState(1);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const chartContainer = useRef(null);
+  const [chartInstance, setChartInstance] = useState(null);
+
   const initialize = useCallback(async () => {
     const responseRegistrations = await getActiveRegistrations(pageReg);
     setRegistrations(responseRegistrations.data);
     const responseUsers = await getActiveUsers(pageUser);
     setActiveUsers(responseUsers.data);
     const allUsers = await getStates();
-    let data = [];
+    let data = { state: [], data: [] };
     allUsers.forEach((val) => {
-      data.push({ name: val.state, activeUsers: val.num });
+      data.state.push(val.state);
+      data.data.push(val.num);
     });
-    setChart(data);
-  }, [setRegistrations, pageReg, pageUser]);
+    chartInstance.data.datasets[0].data = data.data;
+    chartInstance.data.labels = data.state;
+    chartInstance.update();
+  }, [setRegistrations, pageReg, pageUser, chartInstance]);
+  useEffect(() => {
+    if (chartContainer && chartContainer.current) {
+      const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
+      setChartInstance(newChartInstance);
+    }
+  }, [chartContainer]);
   useEffect(() => {
     initialize();
   }, [pageReg, pageUser, initialize]);
@@ -94,7 +107,7 @@ function Dashboard(props) {
       </section>
       <section className="BottomDashboard">
         <div className="charts">
-          <BarChart
+          {/* <BarChart
             data={chart}
             margin={{ top: 20 }}
             width={window.innerWidth}
@@ -108,7 +121,13 @@ function Dashboard(props) {
             <Bar dataKey="activeUsers" fill="#8884d8">
               <LabelList dataKey="name" position="insideStart" angle={90} />
             </Bar>
-          </BarChart>
+          </BarChart> */}
+          <canvas
+            id="mychart"
+            ref={chartContainer}
+            height={300}
+            width={window.innerWidth}
+          />
         </div>
         <div className="list">
           <div className="active-registrations column">

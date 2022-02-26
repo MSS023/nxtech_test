@@ -12,7 +12,7 @@ function Navbar(props) {
         </div>
         <div className="NavbarButtonContainer">
           {buttons.map((button,index) => {
-            return <button className={"navButton "+button.className} onClick={button.onClick}>{button.title}</button>
+            return <button key={index} className={"navButton "+button.className} onClick={button.onClick}>{button.title}</button>
           })}
         </div>
       </nav>

@@ -5,6 +5,7 @@ import "./UserLogin.css";
 import { useState } from "react";
 import { sendRequestRegistration } from "../../services/services";
 import { useNavigate } from "react-router-dom";
+import { message } from "antd";
 
 function UserLogin(props) {
   const [mobile, setMobile] = useState("");
@@ -52,14 +53,19 @@ function UserLogin(props) {
     setNext(false);
   }
   async function handleRequest() {
-    if(validateName(name) && validateCity(city))
-    {
-      const response = await sendRequestRegistration(mobile,password,name,city);
-      if(response) {
-        alert("Registration Request Made");
-      }
-      else {
-        alert("User Already Exist");
+    if (validateName(name) && validateCity(city)) {
+      const response = await sendRequestRegistration(
+        mobile,
+        password,
+        name,
+        city
+      );
+      if (response) {
+        // alert("Registration Request Made");
+        message.success("Registration Request Made");
+      } else {
+        // alert("User Already Exist");
+        message.error("User Already Exists");
       }
     }
   }
@@ -71,7 +77,7 @@ function UserLogin(props) {
   return (
     <div className="UserLogin">
       <section className="Top">
-        <Navbar buttons={[{title: "Admin", onClick: admin}]} />
+        <Navbar buttons={[{ title: "Admin", onClick: admin }]} />
       </section>
       <section className={"Bottom " + (!next ? "" : "hidden")}>
         <div className="LoginCard">
@@ -127,7 +133,9 @@ function UserLogin(props) {
             onChange={setCity}
             errorText={"Please Enter Your State"}
           />
-          <CustomButton onClick={handleRequest}>Request to Register</CustomButton>
+          <CustomButton onClick={handleRequest}>
+            Request to Register
+          </CustomButton>
           <p className="SignInFooter">
             By Registration, I agree to the <a href="/">Terms of Service</a> and{" "}
             <a href="/">Privacy Policy</a>
